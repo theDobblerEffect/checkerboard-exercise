@@ -1,8 +1,16 @@
 // Your JS goes here
 var body = document.getElementsByTagName('body')[0];
 
-function color(square, i) {
-  i % 2 === 0 ? square.style.backgroundColor = 'red' : square.style.backgroundColor = 'black';
+function color(square) {
+  var char = '0123456789abcdef';
+  char.split;
+  var color = '#';
+  for (var i = 0; i < 6; i++){
+    var ranGen = Math.ceil(Math.random() * 15);
+    color += char[ranGen];
+  }
+  console.log(color);
+  square.style.backgroundColor = color;
 }
 
 function makeBoard(num) {
@@ -11,7 +19,7 @@ function makeBoard(num) {
     square.style.paddingBottom = '11.1%';
     square.style.width = '11.1%';
     square.style.cssFloat = 'left';
-    color(square, i);
+    color(square);
     body.appendChild(square);
   }
 }
