@@ -3,8 +3,8 @@ var body = document.getElementsByTagName('body')[0];
 var color1 = [0,0,150];
 var color2 = [255,255,255];
 
-function color(square, i) {
-  if (i % 9 === 0){
+function gradient(iteration) {
+  if (iteration % 9 === 0){
     for (v in color1) {
       color1[v] += 15;
     }
@@ -12,7 +12,10 @@ function color(square, i) {
       color2[v] -= 28;
     }
   }
+}
 
+function color(square, i) {
+  gradient(i);
   i % 2 === 0 ? square.style.backgroundColor = 'rgb('+color1[0]+','+color1[1]+','+color1[2]+')' : square.style.backgroundColor = 'rgb('+color2[0]+','+color2[1]+','+color2[2]+')';
 }
 
