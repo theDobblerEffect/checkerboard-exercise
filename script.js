@@ -9,7 +9,6 @@ function color(square) {
     var ranGen = Math.ceil(Math.random() * 15);
     color += char[ranGen];
   }
-  console.log(color);
   square.style.backgroundColor = color;
 }
 
@@ -24,4 +23,4 @@ function makeBoard(num) {
   }
 }
 
-makeBoard(54);
+makeBoard(81);
