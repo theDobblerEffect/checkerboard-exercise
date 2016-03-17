@@ -1,8 +1,19 @@
 // Your JS goes here
 var body = document.getElementsByTagName('body')[0];
+var color1 = [0,0,150];
+var color2 = [255,255,255];
 
 function color(square, i) {
-  i % 2 === 0 ? square.style.backgroundColor = 'red' : square.style.backgroundColor = 'black';
+  if (i % 9 === 0){
+    for (v in color1) {
+      color1[v] += 15;
+    }
+    for (v in color2) {
+      color2[v] -= 28;
+    }
+  }
+
+  i % 2 === 0 ? square.style.backgroundColor = 'rgb('+color1[0]+','+color1[1]+','+color1[2]+')' : square.style.backgroundColor = 'rgb('+color2[0]+','+color2[1]+','+color2[2]+')';
 }
 
 function makeBoard(num) {
@@ -16,4 +27,4 @@ function makeBoard(num) {
   }
 }
 
-makeBoard(54);
+makeBoard(81);
