@@ -1,5 +1,16 @@
 // Your JS goes here
 var body = document.getElementsByTagName('body')[0];
+var divs;
+
+window.setInterval(flashing, 2000);
+
+
+function flashing() {
+  for (var i = 0; i < divs.length; i++) {
+    color(divs[i]);
+  }
+}
+
 
 function color(square) {
   var char = '0123456789abcdef';
@@ -9,7 +20,6 @@ function color(square) {
     var ranGen = Math.ceil(Math.random() * 15);
     color += char[ranGen];
   }
-  console.log(color);
   square.style.backgroundColor = color;
 }
 
@@ -21,7 +31,8 @@ function makeBoard(num) {
     square.style.cssFloat = 'left';
     color(square);
     body.appendChild(square);
+    divs = document.querySelectorAll('div');
   }
 }
 
-makeBoard(54);
+makeBoard(81);
