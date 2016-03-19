@@ -1,7 +1,7 @@
 // Your JS goes here
 var body = document.getElementsByTagName('body')[0];
-var color1 = [0,0,150];
-var color2 = [255,255,255];
+var color1 = [0,160,210];
+var color2 = [200,235,255];
 
 function gradient(iteration) {
   if (iteration % 9 === 0){
